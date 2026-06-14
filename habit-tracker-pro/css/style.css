@@ -1,0 +1,309 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#020617,#0f172a);
+    padding:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:100%;
+    max-width:1100px;
+    background:#1e293b;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+h1{
+    color:#fff;
+    font-size:2.5rem;
+}
+
+h2{
+    color:#fff;
+    margin-bottom:15px;
+}
+
+button{
+    border:none;
+    outline:none;
+    cursor:pointer;
+    border-radius:10px;
+    padding:14px;
+    color:#fff;
+    font-size:15px;
+    transition:.3s;
+}
+
+#themeBtn{
+    background:#8b5cf6;
+}
+
+#themeBtn:hover{
+    background:#7c3aed;
+}
+
+.add-habit{
+    display:flex;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.add-habit input{
+    flex:1;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    font-size:16px;
+}
+
+.add-habit button{
+    background:#22c55e;
+}
+
+.add-habit button:hover{
+    background:#16a34a;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.stat-card{
+    background:#1d4ed8;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.stat-card h2{
+    font-size:2rem;
+    color:#fff;
+}
+
+.stat-card p{
+    color:#dbeafe;
+}
+
+.progress-section,
+.habit-section,
+.summary-section{
+    background:#0f172a;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:25px;
+}
+
+.progress-bar{
+    width:100%;
+    height:20px;
+    background:#334155;
+    border-radius:50px;
+    overflow:hidden;
+}
+
+#progressFill{
+    width:0%;
+    height:100%;
+    background:#22c55e;
+    transition:.4s;
+}
+
+.habit-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#1e293b;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+.habit-left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.habit-name{
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+}
+
+.streak{
+    color:#f59e0b;
+    font-size:14px;
+}
+
+.habit-actions{
+    display:flex;
+    gap:10px;
+}
+
+.complete-btn{
+    background:#22c55e;
+}
+
+.complete-btn:hover{
+    background:#16a34a;
+}
+
+.delete-btn{
+    background:#ef4444;
+}
+
+.delete-btn:hover{
+    background:#dc2626;
+}
+
+.summary-section p{
+    color:#e2e8f0;
+    font-size:18px;
+}
+
+#currentStreak{
+    color:#22c55e;
+    font-weight:bold;
+}
+
+.action-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.action-buttons button{
+    flex:1;
+}
+
+.action-buttons button:first-child{
+    background:#ef4444;
+}
+
+.action-buttons button:first-child:hover{
+    background:#dc2626;
+}
+
+.action-buttons button:last-child{
+    background:#3b82f6;
+}
+
+.action-buttons button:last-child:hover{
+    background:#2563eb;
+}
+
+#toast{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#22c55e;
+    color:#fff;
+    padding:12px 20px;
+    border-radius:10px;
+    opacity:0;
+    transition:.3s;
+    z-index:999;
+}
+
+#toast.show{
+    opacity:1;
+}
+
+/* Light Mode */
+
+.light-mode{
+    background:#f1f5f9;
+}
+
+.light-mode .container{
+    background:#ffffff;
+}
+
+.light-mode h1,
+.light-mode h2{
+    color:#111827;
+}
+
+.light-mode .progress-section,
+.light-mode .habit-section,
+.light-mode .summary-section{
+    background:#e5e7eb;
+}
+
+.light-mode .habit-item{
+    background:#ffffff;
+    border:1px solid #cbd5e1;
+}
+
+.light-mode .habit-name,
+.light-mode .summary-section p{
+    color:#111827;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    h1{
+        text-align:center;
+        font-size:2rem;
+    }
+
+    .add-habit{
+        flex-direction:column;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .action-buttons{
+        flex-direction:column;
+    }
+
+    .habit-item{
+        flex-direction:column;
+        gap:15px;
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:480px){
+
+    .container{
+        padding:20px;
+    }
+
+    h1{
+        font-size:1.7rem;
+    }
+
+    .stat-card h2{
+        font-size:1.5rem;
+    }
+}
